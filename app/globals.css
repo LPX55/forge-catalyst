@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 180 3.7% 5.29%;
+    --background-secondary: 180deg 3.03% 6.47%;
+    --foreground: 0 0% 98%;
+    --card: 34.29deg 10.14% 13.53%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 180deg 3.03% 6.47%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 7.98deg 73.62% 53.92%;
+    --accent-hover: 8 63% 42%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 34.29deg 10.14% 13.53%;
+    --fcc-background: 180deg 3.03% 6.47%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  .sidebarlink > a{
+    @apply flex flex-row items-center gap-2 px-4 py-2.5 w-full rounded-sm bg-opacity-50;
+  }
+  .sidebarlink > a:hover{
+    @apply bg-neutral-900;
+  }
+  a.active{
+    @apply bg-neutral-900;
+  }
+}
+@layer components {
+  .tremor-Card-root{
+    @apply bg-neutral-900;
+  }  
+  .tremor-TabList-root{
+    @apply bg-neutral-900;
+  }
+  .dark:ui-selected:bg-dark-tremor-background{
+    @apply bg-neutral-600;
+  }
+  aside#sideMain{
+    @apply sticky bg-background
+  }
+  
+}
+.h-calcscreen{
+  height: calc(100vh - 3rem);
+}
+.h-calcscreen-pools{
+  height: calc(100vh - 4rem);
+}
+
+.h-calcscreen-header{
+  height: calc(100vh - 6rem);
+}
+/* .disclaimer{
+  background-image: url("https://bafybeihpth7fbmcvz5xkctoc4rvc342v7lwm5ieidn7hpgwh3wbbjqbdxa.ipfs.w3s.link/catalyst-still.png");
+} */
+.homebg{
+  max-height: 100vh;
+  /* padding: 40px; */
+}
+#video-background {
+  /*  making the video fullscreen  */
+  position: fixed;
+  right: 0; 
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  width: auto; 
+  height: auto;
+  z-index: 1;
+  object-fit: cover;
+  @media (min-width: 440px) {
+    position: fixed;
+    right: 0; 
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto; 
+    height: auto;
+    z-index: 1;
+  }
+
+}
+:is(.dark .dark\:ui-selected){
+  background-color: #111112;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spin {
+  animation: spin 2s linear infinite;
+}
+
+#wormhole-connect{
+  top: 2px;
+  transform: translateY(-4rem);
+  justify-self: stretch;
+}
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation0{
+  display: none !important;
+}
+.headline.headline-1{
+  font-size:1.4rem;
+}

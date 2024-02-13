@@ -1,0 +1,9 @@
+.vercel
+.temp-ignore
+.aider.*
+node_modules
+.env*
+.next
+.grafbase
+.vscode
+forge-trade-widgets-1.2.9.tgz
