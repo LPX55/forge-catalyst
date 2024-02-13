@@ -1,0 +1,27 @@
+name: Check LOC
+
+on:
+  push:
+    branches:
+      - master  # replace with your default branch if not 'main'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Lines of Code Badge
+      uses: shadowmoose/GHA-LoC-Badge@1.0.0
+      with:
+        directory: ./
+        badge: ./badge.svg
+        patterns: '*.js, *.ts, *.tsx, *.json, *.css'
+        ignore: node_modules
+        # badge_label: # optional, default is Lines of Code
+        # badge_color: # optional, default is blue
+        # badge_style: # optional, default is classic
+        # badge_scale: # optional, default is 1
+        # badge_labelcolor: # optional, default is 555
+        # debug: # optional, default is false
