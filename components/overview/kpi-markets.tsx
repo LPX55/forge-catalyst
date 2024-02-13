@@ -8,19 +8,8 @@ import shortenENS, { formatDollarAmount, formatAmount } from "@/lib/helpers"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Btc } from "@/components/icons/svg";
 import { getAssetUrl }  from "@/lib/tokenImage"
+import { Events, Product, DayProduct, TokenPrice } from '@/lib/types';
 import Link from 'next/link'
-const xmarkets = [
-    // { name: "BTC-USD", value: 1000, icon: "BTC.png" },
-    // { name: "ATOM-USD", value: 751, icon: "ATOM.svg" },
-    // { name: "AVAX-USD", value: 471, icon: "AVAX.svg" },
-    // { name: "CRV-USD", value: 280, icon: "CRV.svg" },
-    // { name: "ETH-USD", value: 78, icon: "ETH.svg" },    
-    { name: "BTC-USD", value: 1000 },
-    { name: "ATOM-USD", value: 751 },
-    { name: "AVAX-USD", value: 471 },
-    { name: "CRV-USD", value: 280 },
-    { name: "ETH-USD", value: 78 },
-];
 
 const shop = [
     { name: "BTC-USD", value: 453 },
@@ -31,14 +20,6 @@ const shop = [
 ];
 
 
-
-
-interface Events {
-    name: string;
-    date: string;
-    amount: string;
-    denom: string;
-}
 
 const events: Events[] = [
     {
@@ -60,22 +41,6 @@ const events: Events[] = [
         denom: "stEVMOS"
     },
 ];
-interface Product {
-    _id: string;
-    cumulativeVolumeUsd: number;
-}
-
-interface DayProduct {
-    cumulativePnlUsd: number;
-    cumulativeLiquidationsUsd: number;
-    date: number;
-    _id: string;
-}
-interface TokenPrice {
-    token: string;
-    price: number;
-}
-
 async function fetchPrice(): Promise<TokenPrice[]> {
     try {
         const res = await fetch('https://api.geckoterminal.com/api/v2/simple/networks/evmos/token_price/0x2C68D1d6aB986Ff4640b51e1F14C716a076E44C4%2C0xd4949664cd82660aae99bedc034a0dea8a0bd517', { next: { revalidate: 300 } })

@@ -2,9 +2,11 @@
 .temp-ignore
 .aider.*
 node_modules
-.env*
+.env.development
 .next
 .grafbase
 .vscode
 forge-trade-widgets-1.2.9.tgz
-public/*
+public/ignore/*
+public/alerts.json
+public/changelog.json

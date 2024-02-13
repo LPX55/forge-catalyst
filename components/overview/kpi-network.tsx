@@ -2,38 +2,8 @@
 import { gql } from '../../app/grafbase'
 import { formatDollarAmount, formatUnits } from '@/lib/helpers';
 import { Card, Metric, Text, Title, AreaChart, BadgeDelta, Flex, DeltaType, Grid } from "@tremor/react";
+import { NetworkData, DataItem, HoldingData, DataReturnType, TokenPrice } from '@/lib/types';
 
-type NetworkData = {
-  date: number;
-  cumulativeVolumeUsd: number;
-  cumulativeFeesUsd: number;
-  positionCount: number;
-  tradeCount: number;
-};
-interface DataItem {
-  day: string;
-  vol: number;
-  activity: number;
-  rev: number;
-  tvl: number;
-  [key: string]: string | number;
-};
-type HoldingData = {
-  timestamp: string;
-  close: number;
-  vol?: number;
-  activity?: number;
-  rev?: number;
-};
-type DataReturnType = {
-  holdings: HoldingData[];
-  address?: string;
-  updated_at?: string;
-};
-interface TokenPrice {
-  token: string;
-  price: number;
-}
 
 async function fetchPrice(): Promise<TokenPrice[]> {
   try {
