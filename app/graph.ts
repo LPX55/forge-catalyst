@@ -1,5 +1,6 @@
 import { cache } from 'react'
 
+
 export const gql2 = cache(async () => {
   const apiUrl = process.env.GRAPH_ONE_URL || 'http://127.0.0.1:4000/graphql'
   const apiKey = process.env.GRAPH_ONE_KEY || 'letmein'
