@@ -6,7 +6,7 @@ export const gql = cache(async (query: string, variables?: object, tag?: string,
     slicedQuery = query.slice(0, 250);
   }
   const apiUrl = process.env.GRAFBASE_API_URL || 'https://forge-supergraph-lpx55-xf6yvtjg.grafbase.app/graphql'
-  const apiKey = process.env.GRAFBASE_API_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDI2MDY4MTEsImlzcyI6ImdyYWZiYXNlIiwiYXVkIjoiMDFISE5NQ0IySkRBSjhIR0NTVkVYUlROUVAiLCJqdGkiOiIwMUhITk1DQ1JZNVhLWkU2VlA3WE5GN1YyMCIsImVudiI6InByb2R1Y3Rpb24iLCJwdXJwb3NlIjoicHJvamVjdC1hcGkta2V5In0.Q1aDeNX8TVFULOetp4ihyqrV3EL822B3j4hJGa0lMj4'
+  const apiKey = process.env.GRAFBASE_API_KEY || ''
 
   const res = await fetch(apiUrl, {
     headers: {
