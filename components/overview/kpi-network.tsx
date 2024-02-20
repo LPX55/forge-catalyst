@@ -72,6 +72,8 @@ async function getData(): Promise<DataReturnType> {
 
 export default async function KPICards() {
   // const cachedMarketResponse = await fetch('https://wnr1c6qx6jcz9qde.public.blob.vercel-storage.com/data/cachedMarket.1705622400.json');
+  
+  // Overview page will likely throw errors. RE: https://nextjs.org/docs/messages/middleware-relative-urls
   const cachedMarketResponse = await fetch('/cachedMarket.1705622400.json')
   const cachedMarket = await cachedMarketResponse.json();
 
