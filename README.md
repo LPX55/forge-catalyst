@@ -1,5 +1,6 @@
 # Catalyst Dashboard
 
+
 [![Check LOC](https://github.com/LPX55/leaderboard/actions/workflows/loc_check.yml/badge.svg?branch=master)](https://github.com/LPX55/leaderboard/actions/workflows/loc_check.yml)
 
 Catalyst Dashboard is a comprehensive platform WIP designed to consolidate all Forge and affiliated partners' data, including the incentives program data as well as highly focused analytics for individuak uusers. 
